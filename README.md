@@ -6,6 +6,11 @@ Download this repo
 ```
 git clone https://github.com/zenaton/examples-node.git; cd examples-node
 ```
+then add an .env file
+```
+cp -n .env.example .env
+```
+and populate it with your application id and api token found [here](https://zenaton.com/app/api).
 
 ### Running on Docker
 Simply run
@@ -20,11 +25,6 @@ Install the dependencies
 ```
 npm install
 ```
-then add an .env file
-```
-cp -n .env.example .env
-```
-and populate it with your application id and api token found [here](https://zenaton.com/app/api).
 
 Then, you need to install a Zenaton worker
 ```
