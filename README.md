@@ -4,11 +4,21 @@ This repository contains examples of workflows built with Zenaton. These example
 ## Installation
 Download this repo
 ```
-git clone https://github.com/zenaton/examples-node.git
+git clone https://github.com/zenaton/examples-node.git; cd examples-node
 ```
-and install dependencies
+
+### Running on Docker
+Simply run
 ```
-cd examples-node; npm install
+docker-compose build; docker-compose up
+```
+
+You're all set!
+
+### Running Locally
+Install the dependencies
+```
+npm install
 ```
 then add an .env file
 ```
@@ -24,7 +34,7 @@ and start it, and make it listen to your configuration:
 ```
 zenaton start; zenaton listen --env=.env --boot=boot.js
 ```
-Your all set!
+You're all set!
 
 
 *Your workflows will be processed by your worker, so you won't see anything except the stdout and stderr, respectively `zenaton.out` and `zenaton.err`. Look at these files :)*
