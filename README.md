@@ -8,11 +8,11 @@ git clone https://github.com/zenaton/examples-node.git
 ```
 and install dependencies
 ```
-npm install
+cd examples-node; npm install
 ```
 then add an .env file
 ```
-cd examples-node; npm install ; cp -n .env.example .env
+cp -n .env.example .env
 ```
 and populate it with your application id and api token found [here](https://zenaton.com/app/api).
 
