@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+# Make sure dependencies are installed
+yarn
+
+# Start zenaton agent
+zenaton start
+zenaton listen --env=.env --boot=boot.js
+
+# Log agent output
+touch zenaton.out
+tail -f zenaton.out
