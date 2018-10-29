@@ -4,19 +4,28 @@ This repository contains examples of workflows built with Zenaton. These example
 ## Installation
 Download this repo
 ```
-git clone https://github.com/zenaton/examples-node.git
-```
-and install dependencies
-```
-npm install
+git clone https://github.com/zenaton/examples-node.git && cd examples-node
 ```
 then add an .env file
 ```
-cd examples-node; npm install ; cp -n .env.example .env
+cp -n .env.example .env
 ```
 and populate it with your application id and api token found [here](https://zenaton.com/app/api).
 
-Then, you need to install a Zenaton worker
+### Running the agent on Docker
+Simply run
+```
+docker-compose build; docker-compose up
+```
+
+You're all set!
+
+### Running the agent Locally
+Install dependencies
+```
+yarn
+```
+Then, you need to install the Zenaton agent
 ```
 curl https://install.zenaton.com | sh
 ```
@@ -24,7 +33,7 @@ and start it, and make it listen to your configuration:
 ```
 zenaton start; zenaton listen --env=.env --boot=boot.js
 ```
-Your all set!
+You're all set!
 
 
 *Your workflows will be processed by your worker, so you won't see anything except the stdout and stderr, respectively `zenaton.out` and `zenaton.err`. Look at these files :)*
