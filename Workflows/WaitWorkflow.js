@@ -8,5 +8,4 @@ module.exports = Workflow("WaitWorkflow", function() {
   new Wait().seconds(5).execute();
 
   new TaskB().execute();
-
 });
