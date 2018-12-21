@@ -3,14 +3,17 @@ const
   TaskA = require("../Tasks/TaskA"),
   TaskB = require("../Tasks/TaskB"),
   TaskC = require("../Tasks/TaskC")
+  TaskD = require("../Tasks/TaskD")
 ;
 
 module.exports = Workflow("SequentialWorkflow", function() {
-  const a = new TaskA().execute();
+  var a = new TaskA().execute();
 
-  if (a === 0) {
+  if (0 < a) {
     new TaskB().execute();
   } else {
     new TaskC().execute();
   }
+
+  new TaskD().execute();
 });

@@ -12,6 +12,7 @@ module.exports = Workflow("EventWorkflow", {
   },
   handle() {
     new TaskA().execute();
+    
     if (this.state) {
       new TaskB().execute();
     } else {

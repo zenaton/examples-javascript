@@ -10,4 +10,4 @@ new EventWorkflow(id).dispatch();
 
 setTimeout(function() {
   EventWorkflow.whereId(id).send("MyEvent", {});
-}, 1000);
+}, 2000);
