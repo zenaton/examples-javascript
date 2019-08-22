@@ -1,6 +1,6 @@
-require("./client");
+require("../client");
 
-const RecursiveWorkflow = require("./Recursive/RecursiveWorkflow");
+const RecursiveWorkflow = require("../src/Recursive/RecursiveWorkflow");
 
 // if you need to kill an existing workflow, use:
 // RecursiveWorkflow.whereId(0).kill().catch(err => {

@@ -1,6 +1,6 @@
-require("./client");
+require("../client");
 
-const ParallelWorkflow = require("./Workflows/ParallelWorkflow");
+const ParallelWorkflow = require("../src/Workflows/ParallelWorkflow");
 
 new ParallelWorkflow().dispatch().catch(err => {
   console.error(err);

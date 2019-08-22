@@ -1,6 +1,6 @@
-require("./client");
+require("../client");
 
-const TaskA = require("./Tasks/TaskA");
+const TaskA = require("../src/Tasks/TaskA");
 
 new TaskA().dispatch().catch(err => {
   console.error(err);

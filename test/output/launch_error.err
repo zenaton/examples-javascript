@@ -1,0 +1,11 @@
+Error: Error in TaskE
+    at Object.<anonymous> (/Users/julien/Zenaton/examples-node/src/Tasks/TaskE.js:6:9)
+    at _callee$ (/Users/julien/Zenaton/agent/worker/priv/javascript/lib/Worker/async/Worker.js:70:41)
+    at tryCatch (/Users/julien/Zenaton/agent/worker/priv/javascript/node_modules/regenerator-runtime/runtime.js:45:40)
+    at Generator.invoke [as _invoke] (/Users/julien/Zenaton/agent/worker/priv/javascript/node_modules/regenerator-runtime/runtime.js:271:22)
+    at Generator.prototype.(anonymous function) [as next] (/Users/julien/Zenaton/agent/worker/priv/javascript/node_modules/regenerator-runtime/runtime.js:97:21)
+    at asyncGeneratorStep (/Users/julien/Zenaton/agent/worker/priv/javascript/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)
+    at _next (/Users/julien/Zenaton/agent/worker/priv/javascript/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)
+    at /Users/julien/Zenaton/agent/worker/priv/javascript/node_modules/@babel/runtime/helpers/asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at /Users/julien/Zenaton/agent/worker/priv/javascript/node_modules/@babel/runtime/helpers/asyncToGenerator.js:21:12

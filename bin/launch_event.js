@@ -1,7 +1,7 @@
-require("./client");
+require("../client");
 
 const uniqid = require("uniqid");
-const EventWorkflow = require("./Workflows/EventWorkflow");
+const EventWorkflow = require("../src/Workflows/EventWorkflow");
 
 const id = uniqid();
 new EventWorkflow(id).dispatch().catch(err => {

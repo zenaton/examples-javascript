@@ -15,6 +15,6 @@
   "dependencies": {
     "dotenv": "6.2.0",
     "uniqid": "5.0.3",
-    "zenaton": "^0.5.6"
+    "zenaton": "file:../zenaton-node"
   }
 }
