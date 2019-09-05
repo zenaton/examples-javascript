@@ -1,10 +1,3 @@
 require("./client");
-require("./src/Workflows/SequentialWorkflow");
-require("./src/Workflows/ParallelWorkflow");
-require("./src/Workflows/AsynchronousWorkflow");
-require("./src/Workflows/WaitWorkflow");
-require("./src/Workflows/WaitEventWorkflow");
-require("./src/Workflows/EventWorkflow");
-require("./src/Workflows/VersionWorkflow");
-require("./src/Workflows/ErrorWorkflow");
-require("./src/Recursive/RecursiveWorkflow");
+require("./src/Tests/Node/DemoWorkflow");
+require("./src/Workflows/NodeWorkflow");
