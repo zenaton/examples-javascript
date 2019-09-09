@@ -4,5 +4,5 @@
   "ZENATON_APP_ENV": "check",
   "ZENATON_API_URL": "https://api.barbouze.fr/v1",
   "ZENATON_GATEWAY_URL": "https://gateway.barbouze.fr/api",
-  "TEST_RECORD": false
+  "TEST_RECORD": true
 }

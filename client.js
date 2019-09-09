@@ -1,16 +1,5 @@
 // load .env file
 const fs = require("fs");
-const dotenvJSON = require("dotenv-json");
-dotenvJSON({ path: "./config/main.json" });
-
-global.paths = {};
-const path = require("path");
-
-const p = require("./config/paths");
-for (let i in p) {
-  global.paths[i] = path.join(__dirname, p[i]);
-}
-
 const { Client } = require("zenaton");
 
 const app_id = process.env.ZENATON_APP_ID;

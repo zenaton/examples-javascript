@@ -5,36 +5,39 @@ const err = require(paths.helpers + "Error").throw;
 
 module.exports = Task("LaunchDemo", {
   async handle() {
-    let record = false;
     let compare;
+    let start = Date.now();
 
     await new DemoWorkflow().dispatch();
 
-    await new Promise(resolve => {
-      const intervalId = setInterval(() => {
-        expExist = fs.existsSync(paths.expectedNode + "demoWorkflow");
+    return process.env.TEST_RECORD === "true"
+      ? true
+      : new Promise(resolve => {
+          const intervalId = setInterval(() => {
+            const duration = Date.now() - start;
 
-        if (expExist && record) {
-          err("record");
-          return false;
-        }
+            if (Math.floor(duration / 1000) > 30) {
+              err("Test TimeOut");
+            }
 
-        record = !expExist ? true : false;
+            expExist = fs.existsSync(paths.expectedNode + "SequentialWorkflow");
+            outExist = fs.existsSync(paths.outputNode + "SequentialWorkflow");
+            donExist = fs.existsSync(paths.doneNode + "SequentialWorkflow");
 
-        outExist = fs.existsSync(paths.outputNode + "demoWorkflow");
+            if (expExist && outExist && donExist) {
+              clearInterval(intervalId);
 
-        if (expExist && outExist) {
-          clearInterval(intervalId);
+              const expBuf = fs.readFileSync(
+                paths.expectedNode + "SequentialWorkflow"
+              );
+              const outBuf = fs.readFileSync(
+                paths.outputNode + "SequentialWorkflow"
+              );
 
-          const expBuf = fs.readFileSync(paths.expectedNode + "demoWorkflow");
-          const outBuf = fs.readFileSync(paths.outputNode + "demoWorkflow");
-
-          compare = outBuf.equals(expBuf);
-          resolve();
-        }
-      }, 3000);
-    });
-
-    return compare ? true : err("files are not the same");
+              compare = outBuf.equals(expBuf);
+              compare ? resolve("test success") : err("files are not the same");
+            }
+          }, 3000);
+        });
   }
 });

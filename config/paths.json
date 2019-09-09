@@ -6,6 +6,8 @@
   "expectedNode": "/tests/expected/node/",
   "output": "/tests/output/",
   "outputNode": "/tests/output/node/",
+  "done": "/tests/done/",
+  "doneNode": "/tests/done/node/",
   "supervisors": "/src/workflows/supervisors/",
   "supervisorsNode": "/src/workflows/supervisors/node/",
   "launchers": "/src/tasks/launchers/",
