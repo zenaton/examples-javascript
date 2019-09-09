@@ -2,13 +2,18 @@ const { Task } = require("zenaton");
 const DemoWorkflow = require(paths.testsNode + "demoWorkflow");
 const fs = require("fs");
 const err = require(paths.helpers + "Error").throw;
+const exec = require("child_process").exec;
 
 module.exports = Task("LaunchDemo", {
   async handle() {
     let compare;
     let start = Date.now();
 
-    await new DemoWorkflow().dispatch();
+    exec("node bin/tests/DemoWorkflow.js", (error, stdout, stderr) => {
+      if (error !== null) {
+        console.log(`exec error: ${error}`);
+      }
+    });
 
     return process.env.TEST_RECORD === "true"
       ? true
