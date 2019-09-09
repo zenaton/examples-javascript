@@ -1,0 +1,16 @@
+{
+  "root": "/",
+  "config": "/config/",
+  "helpers": "/src/core/helpers/",
+  "expected": "/tests/expected/",
+  "expectedNode": "/tests/expected/node/",
+  "output": "/tests/output/",
+  "outputNode": "/tests/output/node/",
+  "supervisors": "/src/workflows/supervisors/",
+  "supervisorsNode": "/src/workflows/supervisors/node/",
+  "launchers": "/src/tasks/launchers/",
+  "launchersNode": "/src/tasks/launchers/node/",
+  "tests": "/src/workflows/tests/",
+  "testsNode": "/src/workflows/tests/node/",
+  "tasks": "/src/tasks/usage/"
+}

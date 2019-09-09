@@ -1,10 +1,14 @@
 // load .env file
 const fs = require("fs");
-const dotenv = require("dotenv");
-const dotenvfile = __dirname + "/.env";
+const dotenvJSON = require("dotenv-json");
+dotenvJSON({ path: "./config/main.json" });
 
-if (fs.existsSync(dotenvfile)) {
-  dotenv.config({ path: dotenvfile });
+global.paths = {};
+const path = require("path");
+
+const p = require("./config/paths");
+for (let i in p) {
+  global.paths[i] = path.join(__dirname, p[i]);
 }
 
 const { Client } = require("zenaton");

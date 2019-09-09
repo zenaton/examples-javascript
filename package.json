@@ -14,9 +14,10 @@
   },
   "dependencies": {
     "dotenv": "6.2.0",
+    "dotenv-json": "^1.0.0",
     "minimist": "^1.2.0",
     "uniqid": "5.0.3",
-    "zenaton": "^0.6.1",
+    "zenaton": "^0.6.4",
     "zenaton-local": "file:../zenaton-node",
     "zenaton:0.5.7": "git://github.com/zenaton/zenaton-node.git#0.5.7",
     "zenaton:0.6.0": "git://github.com/zenaton/zenaton-node.git#v0.6.0"

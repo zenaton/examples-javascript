@@ -1,0 +1,8 @@
+{
+  "ZENATON_APP_ID": "PACUMXDIHO",
+  "ZENATON_API_TOKEN": "wJWWSmplGoKJJd7KbWdwgy7EH95br4JuP2q1jWnbqUQ7MggfMd9M9xZ4O4Or",
+  "ZENATON_APP_ENV": "check",
+  "ZENATON_API_URL": "https://api.barbouze.fr/v1",
+  "ZENATON_GATEWAY_URL": "https://gateway.barbouze.fr/api",
+  "TEST_RECORD": false
+}

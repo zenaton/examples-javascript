@@ -1,3 +1,3 @@
 require("./client");
-require("./src/Tests/Node/DemoWorkflow");
-require("./src/Workflows/NodeWorkflow");
+require("./src/workflows/tests/node/demoWorkflow");
+require("./src/workflows/supervisors/node/nodeWorkflow");
