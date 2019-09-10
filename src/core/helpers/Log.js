@@ -2,9 +2,9 @@ const fs = require("fs");
 
 module.exports = (file, line) => {
   const expectedPath = paths.expectNode + file;
-  const outputPath = paths.outputNode + file;
+  const actualPath = paths.actualNode + file;
   const filePath =
-    process.env.TEST_RECORD === "true" ? expectedPath : outputPath;
+    process.env.TEST_RECORD === "true" ? expectedPath : actualPath;
 
   fs.appendFileSync(filePath, line + "\n");
 };

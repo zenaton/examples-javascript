@@ -8,11 +8,10 @@
   "expectNode": "/output/expected/node/",
   "actual": "/output/actual/",
   "actualNode": "/output/actual/node/",
-  "bin": "/bin/",
-  "binNode": "/bin/tests/node/",
   "workflows": "/src/workflows/",
   "launchers": "/src/tasks/launchers/",
   "tests": "/tests/",
   "testsNode": "/tests/node/",
-  "tasks": "/src/tasks/usage/"
+  "tasks": "/src/tasks/",
+  "handlers": "/src/core/handlers/"
 }

@@ -1,43 +1,41 @@
 const fs = require("fs");
 const { Workflow } = require("zenaton");
-const Launcher = require(paths.launchers + "node");
 
-const workflowToTest = fs.readdirSync(paths.binNode).map(file => {
-  const obj = {};
-  const arr = file.split(".");
+const workflowToTest = fs
+  .readdirSync(paths.tests)
+  .filter(el => fs.lstatSync(paths.tests + el).isFile())
+  .map(file => {
+    const obj = {};
+    const arr = file.split(".");
 
-  obj.file = arr[0];
-  obj.extension = arr[1];
+    obj.file = arr[0];
+    obj.extension = arr[1];
 
-  switch (arr[1]) {
-    case "js":
-      obj.runtime = "node";
-      obj.language = "node";
-      break;
-    case "php":
-      obj.runtime = "php";
-      obj.language = "php";
-      break;
-    case "python":
-      obj.runtime = "python";
-      obj.language = "python";
-      break;
-    case "ruby":
-      obj.runtime = "ruby";
-      obj.language = "ruby";
-      break;
-  }
+    switch (arr[1]) {
+      case "js":
+        obj.runtime = "node";
+        break;
+      case "php":
+        obj.runtime = "php";
+        break;
+      case "python":
+        obj.runtime = "python";
+        break;
+      case "ruby":
+        obj.runtime = "ruby";
+        break;
+    }
 
-  return obj;
-});
+    return obj;
+  });
 
 module.exports = Workflow("NodeWorkflow", async () => {
   for (el of workflowToTest) {
-    await new Launcher(
-      el.file,
-      el.extension,
-      el.runtime,
-      el.language
-    ).dispatch();
+    const Task = require(paths.tests + el.file);
+    await new Task({
+      file: el.file,
+      extension: el.extension,
+      runtime: el.runtime
+    }).dispatch();
   }
 });
