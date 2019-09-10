@@ -1,4 +1,9 @@
 require("./init");
 require("./client");
-require("./src/workflows/tests/node/demoWorkflow");
-require("./src/workflows/supervisors/node/nodeWorkflow");
+require("./src/workflows/nodeSupervisor");
+require("./tests/node/SequentialWorkflow");
+require("./tests/node/AsynchronousWorkflow");
+require("./tests/node/ErrorWorkflow");
+require("./tests/node/EventWorkflow");
+require("./tests/node/WaitEventWorkflow");
+require("./tests/node/WaitWorkflow");

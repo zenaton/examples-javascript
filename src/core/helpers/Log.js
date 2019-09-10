@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 module.exports = (file, line) => {
-  const expectedPath = paths.expectedNode + file;
+  const expectedPath = paths.expectNode + file;
   const outputPath = paths.outputNode + file;
   const filePath =
     process.env.TEST_RECORD === "true" ? expectedPath : outputPath;

@@ -1,20 +1,14 @@
 const fs = require("fs");
-const path = require("path");
 const main = require("../config/main.json");
 const argv = require("minimist")(process.argv.slice(2));
 main.TEST_RECORD = argv._.includes("record") ? true : false;
 
 require("../init");
+const clean = require(paths.helpers + "Clean");
 
-const doneFiles = fs.readdirSync(paths.doneNode);
-for (let file of doneFiles) {
-  fs.unlinkSync(path.join(paths.doneNode, file));
-}
-
-const outputFiles = fs.readdirSync(paths.outputNode);
-for (let file of outputFiles) {
-  fs.unlinkSync(path.join(paths.outputNode, file));
-}
+clean.done();
+clean.actual();
+if (main.TEST_RECORD) clean.expect();
 
 fs.writeFileSync(
   __dirname + "/../config/main.json",
@@ -23,8 +17,8 @@ fs.writeFileSync(
 
 require("../client");
 
-const NodeWorkflow = require(paths.supervisorsNode + "nodeWorkflow");
+const NodeSupervisor = require(paths.workflows + "nodeSupervisor");
 
-new NodeWorkflow().dispatch().catch(err => {
+new NodeSupervisor().dispatch().catch(err => {
   console.error(err);
 });
