@@ -1,8 +1,8 @@
 const { Workflow, Parallel } = require("zenaton");
-const TaskA = require(paths.tasks + "taskA");
-const TaskC = require(paths.tasks + "taskC");
-const TaskE = require(paths.tasks + "taskE");
-const TaskEnd = require(paths.tasks + "taskEnd");
+const TaskA = require(paths.tasksNode + "taskA");
+const TaskC = require(paths.tasksNode + "taskC");
+const TaskE = require(paths.tasksNode + "taskE");
+const TaskEnd = require(paths.tasksNode + "taskEnd");
 
 module.exports = Workflow("ErrorWorkflow", async () => {
   await new Parallel(

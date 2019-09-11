@@ -5,7 +5,27 @@ require("../client");
 const { Task } = require("zenaton");
 const handler = require(paths.handlers + "main");
 module.exports = Task("AsynchronousWorkflow", async function() {
-  await handler(this.runtime, this.file, this.extension);
+  return handler(
+    this.runtime,
+    this.file,
+    this.extension,
+    (expect, actual, data) => {
+      for (let sub of data) {
+        if (!actual.includes(sub)) return [false, "string not found"];
+      }
+      return [true, "test success"];
+    },
+    [
+      "Task A starts",
+      "Task B starts",
+      "Task C starts",
+      "Task A ends",
+      "Task B ends",
+      "Task C ends",
+      "Task D starts",
+      "Task D ends"
+    ]
+  );
 });
 
 // Workflow dispatcher

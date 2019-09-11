@@ -2,6 +2,7 @@ const fs = require("fs");
 const err = require(paths.helpers + "Error").throw;
 const exec = require("child_process").exec;
 
+const TIME_TO_CHECK = 30;
 const TIME_OUT_DELAY = 60;
 
 module.exports = (
@@ -12,6 +13,7 @@ module.exports = (
   data = null
 ) => {
   let compare;
+  let timeToCheck = false;
   let start = Date.now();
 
   exec(
@@ -29,15 +31,18 @@ module.exports = (
         const intervalId = setInterval(() => {
           const duration = Date.now() - start;
 
+          if (Math.floor(duration / 1000) > TIME_TO_CHECK) {
+            timeToCheck = true;
+          }
+
           if (Math.floor(duration / 1000) > TIME_OUT_DELAY) {
             err("Test TimeOut");
           }
 
           expExist = fs.existsSync(paths.expectNode + file);
           outExist = fs.existsSync(paths.actualNode + file);
-          donExist = fs.existsSync(paths.doneNode + file);
 
-          if (expExist && outExist && donExist) {
+          if (expExist && outExist && timeToCheck) {
             clearInterval(intervalId);
 
             const expBuf = fs.readFileSync(paths.expectNode + file);

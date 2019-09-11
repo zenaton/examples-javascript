@@ -24,6 +24,10 @@ module.exports.expect = () => {
   cleanExpectFiles();
 };
 
+module.exports.logFiles = () => {
+  cleanLogFiles();
+};
+
 const cleanDoneFiles = () => {
   const doneFiles = fs.readdirSync(paths.doneNode);
   for (let file of doneFiles) {
@@ -43,4 +47,9 @@ const cleanExpectFiles = () => {
   for (let file of expectFiles) {
     fs.unlinkSync(path.join(paths.expectNode, file));
   }
+};
+
+const cleanLogFiles = () => {
+  fs.writeFileSync(paths.root + "zenaton.out", "");
+  fs.writeFileSync(paths.root + "zenaton.err", "");
 };

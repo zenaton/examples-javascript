@@ -1,7 +1,7 @@
 const { Workflow, Wait } = require("zenaton");
-const TaskA = require(paths.tasks + "taskA");
-const TaskB = require(paths.tasks + "taskB");
-const TaskEnd = require(paths.tasks + "taskEnd");
+const TaskA = require(paths.tasksNode + "taskA");
+const TaskB = require(paths.tasksNode + "taskB");
+const TaskEnd = require(paths.tasksNode + "taskEnd");
 
 module.exports = Workflow("WaitWorkflow", async function() {
   await new TaskA("WaitWorkflow").execute();

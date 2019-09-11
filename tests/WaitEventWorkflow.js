@@ -5,7 +5,7 @@ require("../client");
 const { Task } = require("zenaton");
 const handler = require(paths.handlers + "main");
 module.exports = Task("WaitEventWorkflow", async function() {
-  await handler(this.runtime, this.file, this.extension);
+  return handler(this.runtime, this.file, this.extension);
 });
 
 // Workflow dispatcher

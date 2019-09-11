@@ -10,6 +10,6 @@ module.exports = Task("TaskE", {
 
     throw new Error("Error in TaskE");
 
-    console.log(this.file, "Task E ends");
+    Log(this.file, "Task E ends");
   }
 });

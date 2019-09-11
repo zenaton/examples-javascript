@@ -1,8 +1,8 @@
 const { Workflow } = require("zenaton");
-const TaskA = require(paths.tasks + "taskA");
-const TaskB = require(paths.tasks + "taskB");
-const TaskC = require(paths.tasks + "taskC");
-const TaskEnd = require(paths.tasks + "taskEnd");
+const TaskA = require(paths.tasksNode + "taskA");
+const TaskB = require(paths.tasksNode + "taskB");
+const TaskC = require(paths.tasksNode + "taskC");
+const TaskEnd = require(paths.tasksNode + "taskEnd");
 
 module.exports = Workflow("EventWorkflow", {
   init(id) {

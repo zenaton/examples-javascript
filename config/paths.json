@@ -13,5 +13,9 @@
   "tests": "/tests/",
   "testsNode": "/tests/node/",
   "tasks": "/src/tasks/",
+  "tasksNode": "/src/tasks/node/",
+  "tasksPhp": "/src/tasks/php/",
+  "tasksPython": "/src/tasks/python/",
+  "tasksRuby": "/src/tasks/ruby/",
   "handlers": "/src/core/handlers/"
 }

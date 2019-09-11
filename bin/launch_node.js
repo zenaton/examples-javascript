@@ -8,6 +8,7 @@ const clean = require(paths.helpers + "Clean");
 
 clean.done();
 clean.actual();
+clean.logFiles();
 if (main.TEST_RECORD) clean.expect();
 
 fs.writeFileSync(
